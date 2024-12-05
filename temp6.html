@@ -38,6 +38,12 @@
         border: 5px solid orange;
         border-radius: 20px;
         background: linear-gradient(maroon, silver);
+        box-shadow: 5px 5px 5px 5px greenyellow;
+        transition-duration: 0.2s;
+        transition-property: transform;
+      }
+      .box:hover{
+        transform: scale(0.5,0.5);
       }
 
       .container {
@@ -67,6 +73,39 @@
         opacity: 0.4;
         color: white;
       }
+      ul{
+          margin: 0px;
+          padding: 0px;
+      }
+      li{
+        display: inline-block;
+        padding: 5px;
+        font-size: larger;
+      }
+      .menu{
+        margin: 0px;
+      }
+      .submenu{
+        display:none;
+        position: absolute;
+        background-color: silver;
+      }
+      .menu:hover .submenu{
+        display: block;
+      }
+      .ser{
+        background-color: aquamarine;
+        height: 100%;
+        position: absolute;
+        display: none;
+        top: 80px;
+        right: 0px;
+        width: 200px;
+
+      }
+      .s:hover .ser{
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -79,11 +118,29 @@
     <div id="h">
       <h3>My Application</h3>
       <div>
-        <a href="#home">Home</a>
+        <ul>
+        <li><a href="#home">Home</a></li>
+        <li class="menu">
         <a href="#projects">Projects</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <div class="submenu">
+          <a href="#">project1</a>
+          <a href="#">project2</a>
+          <a href="#">project3</a>
+        </div>
+      </li>
+      <li><a href="#">About</a></li>
+      <li class="s">
+        <a href="#services" >Services</a>
+        <div class="ser" >
+          <h1>SERVICES</h1>
+          <ol>
+            <li>web dev</li>
+            <li>mobike app</li>
+            <li>backend</li>
+          </ol>
+        </div></li>
+      <li><a href="#">Contact</a></li>
+        </ul>
       </div>
     </div>
     <div class="row header" id="home">
@@ -109,6 +166,7 @@
         <a href="#">View Project</a>
       </div>
     </div>
+    
     <div>
       <h3>@Copyright 2024. All rights reserved.</h3>
     </div>
