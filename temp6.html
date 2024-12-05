@@ -1,31 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temp 6</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <style>
-        .c{
-            background-color: rgb(216, 212, 206);
-        }
+      * {
+        margin: 0px;
+      }
+      .c {
+        background-color: orange;
+      }
+      h3 {
+        background-color: orange;
+      }
+      #h {
+        position: sticky;
+        top: 0px;
+        background-color: orange;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .row {
+        background-color: silver;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+      }
+      .box {
+        /* background-color: teal; */
+        margin: 20px;
+        padding: 20px;
+        width: 300px;
+        border: 5px solid orange;
+        border-radius: 20px;
+        background: linear-gradient(maroon, silver);
+      }
+
+      .container {
+        position: absolute;
+        scroll-behavior: smooth;
+        overflow: auto;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        height: 100%;
+      }
+      p {
+        font-size: 12px;
+        font-family: "verdana";
+        font-weight: bold;
+      }
+      .header {
+        background-image: url("/temp/assets/img/officedesk.jpg");
+        background-size: cover;
+        justify-content: center;
+        align-items: end;
+      }
+      .caption {
+        background-color: red;
+        padding: 20px;
+        opacity: 0.4;
+        color: white;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
     <h1>Temp 6</h1>
-    <div>
-    <div class="header" style="background-color: beige">
-        <div>
-          <h1 style="color: rgb(67, 2, 2)">My Online Store</h1>
-        </div>
-        <div>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">contact</a></li>
-          </ul>
-        </div>
+    <!-- <h3 style="background-color: orange">My Application</h3> -->
+    <!-- <h3 class="c">My Application</h3> -->
+    <!-- <h3>My Application</h3> -->
+     
+    <div id="h">
+      <h3>My Application</h3>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
       </div>
-    <h2 class="c">my web art</h2>
-</body>
+    </div>
+    <div class="row header" id="home">
+      <div class="caption">
+        <h1>Full Stack Developer</h1>
+        <p>MERN | MERN | Java | Python</p>
+      </div>
+    </div>
+    <div class="row" id="projects" >
+      <div class="box">
+        <h2>Project 1</h2>
+        <p>This is my project 1</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="box">
+        <h2>Project 2</h2>
+        <p>This is my project 2</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="box">
+        <h2>Project 3</h2>
+        <p>This is my project 3</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+    <div>
+      <h3>@Copyright 2024. All rights reserved.</h3>
+    </div>
+  </div>
+  </body>
 </html>
