@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function math(){
+            let n1=Number(document.getElementById("n1").value);
+            let n2=Number(document.getElementById("n2").value);
+            let a=n1+n2;
+            let s=n1-n2;
+            let m=n1*n2;
+            let d=n1/n2;
+            data.innerHTML=`${n1}+${n2} = ${a}<br>
+            ${n1}-${n2} = ${s}<br>
+            ${n1}*${n2} = ${m}<br>
+            ${n1}/${n2} = ${d}`
+        }
+        function dark(){
+            document.getElementById("data").style.backgroundColor="brown"
+        }
+        function bright(){
+            document.getElementById("data").style.backgroundColor="#e6e6e6"
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="n1" placeholder="enter num1"><br><br>
+    <input type="number" id="n2" placeholder="enter num2"><br><br>
+    <button onclick="math()">submit</button><hr>
+    <div id="data" style="border: 2px solid;"></div>
+    <hr>
+    <button onclick="dark()"> dark </button><br><br>
+    <button onclick="bright()"> bright</button>
+</body>
+</html>

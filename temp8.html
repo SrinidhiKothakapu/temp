@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let users=[];
         function showData(){
             //alert("Hello World!!")
             var name=document.getElementById("name").value
             var email=document.getElementById("email").value
             var password=document.getElementById("password").value
             var dob=document.getElementById("dob").value
-            data.innerHTML=`${name},${email},${password},${dob}`
+           // data.innerHTML=`${name},${email},${password},${dob}`,
+           let user={
+            name: name,
+            email:email,
+            password:password,
+            dob:dob
+           }
+           users.push(user)
+           console.log(users)
+           let len=users.length
+           let str=""
+           for(let i=0;i<len;i++){
+            str=str+`<li> ${users[i].name}-${users[i].email}-${users[i].password}-${users[i].dob}`
+           }
+             data.innerHTML=str
         } 
     </script>
 </head>
@@ -21,7 +36,7 @@
         <p><input type="text" id="name" placeholder="enter name"></p>
         <p><input type="email" id="email" placeholder="enter email address"></p>
         <p><input type="password" id="password" placeholder="enter password"></p>
-        <p><input type="datetime-local" id="dob"></p>
+        <p><input type="date" id="dob"></p>
         <button onclick="showData()">Register</button>    
     </form>
     <hr/>

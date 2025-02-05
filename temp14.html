@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            justify-content: center;
+        }
+        .box{
+            text-decoration: yellowgreen;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="data"></div>
+    <script>
+        let products=[
+            {
+                id: 1,
+                name: "pro 1",
+                price: 30,
+                desc: "this ia a pro 1",
+                url: "https://picsum.photos/id/1/200/300",
+            },
+            {
+                id: 2,
+                name: "pro 2",
+                price: 50,
+                desc: "this ia a pro 2",
+                url: "https://picsum.photos/id/2/200/300",
+            },
+            {
+                id: 3,
+                name: "pro 3",
+                price: 40,
+                desc: "this ia a pro 3",
+                url: "https://picsum.photos/id/3/200/300",
+            },
+        ];
+           let len=products.length;
+           let str="<div class='container'>";
+           for(let i=0;i<len;i++){
+            str=str+`<div class='box'><img src='${products[i].url}'/> <h3>${products[i].name}</h3><p>${products[i].desc}</p>${products[i].price}<br><button>add to cart
+                </button></div>`;
+           }
+           str=str+"</div>"
+             data.innerHTML=str
+    </script>
+</body>
+</html>
