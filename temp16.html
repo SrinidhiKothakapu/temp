@@ -18,14 +18,18 @@
             ${n1}/${n2} = ${d}`
         }
         function dark(){
-            document.getElementById("data").style.backgroundColor="brown"
+            let body=document.getElementById("root");
+            body.style.backgroundColor="black";
+            body.style.color="white";
         }
         function bright(){
-            document.getElementById("data").style.backgroundColor="#e6e6e6"
+            let body=document.getElementById("root")
+            body.style.backgroundColor="#e6e6e6";
+            body.style.color="black"
         }
     </script>
 </head>
-<body>
+<body id="root">
     <input type="number" id="n1" placeholder="enter num1"><br><br>
     <input type="number" id="n2" placeholder="enter num2"><br><br>
     <button onclick="math()">submit</button><hr>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        let users = [];
+        let useremail="";
+        let username="";
+        let curbal=0;
+        function showUser(){
+          let str=""
+          for(let i=0;i<users.length;i++){
+            str+=`<option value="${users[i]}">`
+          }
+        }
+        function transaction(){
+          let tran=document.getElementById("type").value;
+          let amount=Number(document.getElementById("amount").value);
+          for(let i=0;i<users.length;i++){
+            if(users[i].email==useremail){
+              if(tran=="1"){
+                users[i].balance+=amount;
+              }
+              else if(tran=="2"){
+                if(amount<=users[i].balance){
+                  users[i].balance-=amount;
+                }
+                else {
+                  alert("insufficent bal");
+                }
+              }
+              else if(tran=="3"){
+                let newuser=document.getElementById("selUser").value
+                for(let i=0;i<users.length;i++){
+                  
+                }
+              }
+              spBalance.innerHTML=users[i].balance
+              break
+            }
+          }  
+        }
+        function home(){
+            let str = `
+            <h2>Welcome! ${username}</h2>
+            <button onclick='showLogin()'>Logout</button>
+            <p><input type="number" id="amount" placeholder="amount"></p>
+            <p>
+                <select id="type">
+                    <option value=0>--select--</option>
+                    <option value=1>deposit</option>
+                    <option value=2>withdraw</option>
+                    <option value=3>transer</option>
+                </select>
+            </p>
+            <p><select id="selUser">
+              
+            </select></p>
+            <button onclick="transaction()">submit</button>
+            <p>current balance:<span id="spBalance">${curbal}</span></p>
+            `;
+            root.innerHTML = str;
+        }
+        
+      function addUser() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let dob = document.getElementById("dob").value;
+        let user = {
+          name: name,
+          email: email,
+          password: password,
+          dob: dob,
+          balance:0
+        };
+        users.push(user);
+        showLogin();
+      }
+      function chkUser() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        for (let i = 0; i < users.length; i++) {
+          if (users[i].email == email && users[i].password == password) {
+            useremail=email;
+            username=users[i].name;
+            curbal=users[i].balance;
+            home();
+            break;
+          }
+          else {
+            msg.innerHTML = "Access Denied"
+          }
+        }
+      }
+      function showForm() {
+        let str = `
+        <h2>Registration Form</h2>
+        <p><input type="text" id="name" placeholder="Name"></p>
+        <p><input type="text" id="email" placeholder="Email"></p>
+        <p><input type="password" id="password" placeholder="Password"></p>
+        <p><input type="date" id="dob"></p>
+        <p><button onclick='addUser()'>Submit</button></p>
+        <p>Already a member?<button onclick='showLogin()'>Login Here</button></p>
+        `;
+        root.innerHTML = str;
+      }
+      function showLogin() {
+        let str = `
+        <div>
+            <h2>Login Form</h2>
+            <div id='msg'></div>
+            <p><input id="email" type="text"></p>
+            <p><input id="password" type="password"></p>
+            <button onclick='chkUser()'>Log In</button>
+            <p><button onclick='showForm()'>Create Account</button></p>
+        </div>
+        `;
+        root.innerHTML = str;
+      }
+      
+    </script>
+  </head>
+  <body onload="showLogin()">
+    <h1>INDIAN BANK</h1><HR>
+    <div id="root"></div>
+    <hr>
+    <footer>@Copyright 2005. All rights reserved.</footer>
+  </body>
+</html>
