@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
+        function change(){
+            let col=document.getElementById("color").value;
+            document.getElementById("root").style.color= col;
+            
+
+        }
+        function bgChange(){
+            let col=document.getElementById("bgColor").value;
+            document.getElementById("body").style.backgroundColor= col;
+        }
     </script>
 </head>
-<body>
+<body id="body">
     <input type="text" id="color" placeholder="enter the color">
-    <button onclick="change()">submit</button>
+    <button onclick="change()">submit</button><br><br>
+    <select id="bgColor">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+        <option value="yellow">yellow</option>
+    </select>
+    <button onclick="bgChange()">submit</button>
+    <div id="root">Hello World!!</div>
 </body>
 </html>
