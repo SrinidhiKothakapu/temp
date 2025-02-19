@@ -20,28 +20,55 @@
                     <input type="text" id="firstName" placeholder="First name" required> 
                     <input type="text" id="lastName" placeholder="Surname" required>
                 </div>
-                <label>Birthday</label>
-                <input type="date" id="dob" required>
-                <input type="email" id="email" placeholder="Email or phone number" required>
-                <input type="password" id="password" placeholder="New password" required>
-
-                
-
-                <label>Gender</label>
-                <div class="gender">
-                    <input type="radio" name="gender" value="Male" required> Male
-                    <input type="radio" name="gender" value="Female"> Female
-                    <input type="radio" name="gender" value="Other"> Other
+                <p style="font-size:small; color: rgb(53, 52, 52);">Date of birth</p>
+                <div class="dob">
+                <select id="day"></select>
+                <select id="month"></select>
+                <select id="year"></select>
                 </div>
 
+                <p style="font-size:small; color: rgb(53, 52, 52);">Gender</p>
+                <div class="gender-group">
+                    <label for="female">Female<input type="radio" id="female" name="gender" value="Female"></label>
+                    <label for="male">Male
+                    <input type="radio" id="male" name="gender" value="Male"></label>
+                    <label for="custom">Custom
+                    <input type="radio" id="custom" name="gender" value="Custom"></label>
+                    
+                </div>
+                <input type="email" id="email" placeholder="Mobile number or email address" required>
+                <input type="password" id="password" placeholder="New password" required>
+                <p style="font-size: 12px;">People who use our service may have uploaded your contact information to Facebook. Learn more.</p>
+
+                   <p style="font-size: 12px;"> By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
                 <button type="submit">Sign Up</button>
             </form>
 
-            <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+            <p class="login-link"> <a href="#">Already have an account?</a></p>
         </div>
     </div>
 
-    <script src="temp21.html"></script>
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+            const day = document.getElementById('day');
+            const month = document.getElementById('month');
+            const year = document.getElementById('year');
+
+            for (let i = 1; i <= 31; i++) {
+                day.innerHTML += `<option value="${i}">${i}</option>`;
+            }
+
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            months.forEach((mon, index) => {
+                month.innerHTML += `<option value="${index + 1}">${mon}</option>`;
+            });
+
+            const currentYear = new Date().getFullYear();
+            for (let i = currentYear; i >= 1905; i--) {
+                year.innerHTML += `<option value="${i}">${i}</option>`;
+            }
+        });
+                </script>
 
 </body>
 </html>
