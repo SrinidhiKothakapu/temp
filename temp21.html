@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Sign Up</title>
+    <link rel="stylesheet" href="styles21.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 style="font-size: 60px;">facebook</h1>
+
+        <div class="form-box">
+            <h2>Create a new account</h2>
+            <p style="text-align: center;">It's quick and easy.</p><hr>
+
+            <form id="signupForm">
+                <div class="input-box">
+                    <input type="text" id="firstName" placeholder="First name" required> 
+                    <input type="text" id="lastName" placeholder="Surname" required>
+                </div>
+                <label>Birthday</label>
+                <input type="date" id="dob" required>
+                <input type="email" id="email" placeholder="Email or phone number" required>
+                <input type="password" id="password" placeholder="New password" required>
+
+                
+
+                <label>Gender</label>
+                <div class="gender">
+                    <input type="radio" name="gender" value="Male" required> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Other"> Other
+                </div>
+
+                <button type="submit">Sign Up</button>
+            </form>
+
+            <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+        </div>
+    </div>
+
+    <script src="temp21.html"></script>
+
+</body>
+</html>

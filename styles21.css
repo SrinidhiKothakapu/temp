@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.container {
+    margin-top: 10px;
+}
+
+h1 {
+    color: #166ad8;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 16px;
+    color: #606770;
+}
+
+/* Form Box */
+.form-box {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Box for First & Last Name */
+.input-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-box input {
+    width: 48%;
+}
+
+/* Gender Selection */
+.gender {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+/* Signup Button */
+button {
+    background-color: #42b72a;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #36a420;
+}
+
+/* Login Link */
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+a {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: bold;
+}
