@@ -13,8 +13,11 @@
         let b=document.body;
         let topP=0;
         b.onkeydown=(e)=>{
-            topP+=5;
-            ball.style.top=topP+"px";
+            // console.log(e.key);
+            if(e.key=="ArrowDown") {topP+=5; ball.style.top=topP+"px";}
+            if(e.key=="ArrowUp") {topP-=5;ball.style.top=topP+"px";}
+            if(e.key=="ArrowLeft"){topP-=5;ball.style.left=topP+"px";}
+            if(e.key=="ArrowRight"){topP+=5;ball.style.left=topP+"px";}
         };
         
     </script>
