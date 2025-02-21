@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/assets/img/ball.jpeg" width="200px" id="ball" alt="ball">
+    <div id="root"></div>
+    <script>
+        ball.style.position="relative";
+        let b=document.body;
+        let left=0;
+        b.onkeydown=(e)=>{
+            left+=5;
+            ball.style.left=left +"px";
+        };
+        
+    </script>
+</body>
+</html>
