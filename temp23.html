@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catch the Ball Game</title>
+  </head>
+  <body>
+    <div id="sco" style="position: fixed; width: 130px; height: 50px; background-color: green; color:beige; padding: 10px;">
+      <p>Game Score: <span id="scoreValue">0</span></p>
+    </div>
+    <img src="assets/img/cricketball.webp" width="50px" id="ball" style="border-radius: 50%; position: absolute; top: 0; left: 0;" />
+    <img src="assets/img/bucket.jpeg" width="100px" id="bucket" style="position: absolute;" />
+
+    <script>
+      let bucket = document.getElementById("bucket");
+      let ball = document.getElementById("ball");
+      let scoreDisplay = document.getElementById("scoreValue");
+
+      let left = 0;
+      let down = 400;
+      bucket.style.left = left + "px";
+      bucket.style.top = down + "px";
+
+      document.body.onkeydown = (e) => {
+        if (e.key == "ArrowRight" && left < window.innerWidth - 100) left += 10;
+        if (e.key == "ArrowLeft" && left > 0) left -= 10;
+        bucket.style.left = left + "px";
+      };
+
+      let t = 0;
+      let l = Math.random() * (window.innerWidth - 50);
+      let score = 0;
+
+      function ballFall() {
+        t += 1.5;
+        if (t > down - 40) {
+          checkCollision();
+          t = 0;
+          l = Math.random() * (window.innerWidth - 50);
+        }
+        ball.style.top = t + "px";
+        ball.style.left = l + "px";
+        requestAnimationFrame(ballFall);
+      }
+
+      function checkCollision() {
+        let bucketLeft = bucket.offsetLeft;
+        let bucketRight = bucketLeft + bucket.offsetWidth;
+        let ballLeft = ball.offsetLeft;
+        let ballRight = ballLeft + ball.offsetWidth;
+
+        if (ballRight > bucketLeft && ballLeft < bucketRight) {
+          score++;
+          scoreDisplay.textContent = score;
+        }
+      }
+
+      ballFall();
+    </script>
+  </body>
+</html>

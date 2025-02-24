@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <img src="assets/img/eye.png" width="200px" id="ball" alt="ball">
-    <div id="root"></div>
+  </head>
+  <body>
+    <img src="assets/img/bucket.jpeg" width="100px" id="bucket" />
+    <img src="assets/img/cricketball.webp" width="50px" id="ball" style="border-radius: 50%;" />
     <script>
-        ball.style.position="absolute";
-        let b=document.body;
-        let topP=0;
-        b.onkeydown=(e)=>{
-            // console.log(e.key);
-            if(e.key=="ArrowDown") {topP+=5; ball.style.top=topP+"px";}
-            if(e.key=="ArrowUp") {topP-=5;ball.style.top=topP+"px";}
-            if(e.key=="ArrowLeft"){topP-=5;ball.style.left=topP+"px";}
-            if(e.key=="ArrowRight"){topP+=5;ball.style.left=topP+"px";}
-        };
-        
+      bucket.style.position = "absolute";
+      let b = document.body;
+      let left = 0;
+      let down = 400;
+      b.onkeydown = (e) => {
+        if (e.key == "ArrowRight") left += 5;
+        if (e.key == "ArrowDown") down += 5;
+        if (e.key == "ArrowLeft") left -= 5;
+        if (e.key == "ArrowUp") down -= 5;
+        bucket.style.left = left + "px";
+        bucket.style.top = down + "px";
+      };
     </script>
-</body>
+  </body>
 </html>
