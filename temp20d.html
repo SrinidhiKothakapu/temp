@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a;
+        console.log(typeof a); // undefined
+        a? console.log("a is defined") : console.log("a is not defined"); // a is not defined
+        let res=a||10
+        console.log(res); // 10
+        let res1=a??10
+        console.log(res1); // true
+        let cart={1:0}
+        let res2=cart[1]||10
+        console.log(res2); // 0
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
